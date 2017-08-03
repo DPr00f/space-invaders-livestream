@@ -1,0 +1,28 @@
+{
+    "extends": [
+        "airbnb"
+    ],
+    "plugins": [
+        "react",
+        "jsx-a11y",
+        "import"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "env": {
+        "browser": true,
+        "node": true,
+        "es6": true
+    },
+    "rules": {
+        "indent": ["error", 4],
+        "jsx-a11y/href-no-hash": 0,
+        "react/jsx-indent": ["error", 4],
+        "react/jsx-filename-extension": 0
+    }
+}
