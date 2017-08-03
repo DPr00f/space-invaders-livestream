@@ -13,7 +13,8 @@ module.exports = {
     },
     output: {
         path: outputFolder,
-        filename: '[name].js'
+        filename: '[name].js',
+        publicPath: '/assets/'
     },
     module: {
         loaders: [
