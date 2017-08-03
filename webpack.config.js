@@ -1,13 +1,14 @@
-const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const srcFolder = path.resolve(__dirname, 'src');
 const outputFolder = path.join(__dirname, 'output');
 const jsEntry = path.resolve(srcFolder, 'index.js');
-const stylesEntry = path.resolve(srcFolder, 'main.scss');
 
 const extractCSS = new ExtractTextPlugin({ filename: 'main.css' });
+
+const isProd = process.env.NODE_ENV === 'production';
 
 module.exports = {
     devtool: 'source-map',
@@ -18,10 +19,16 @@ module.exports = {
     output: {
         path: outputFolder,
         filename: '[name].js',
-        publicPath: '/assets/'
+        publicPath: '/'
     },
     plugins: [
-        extractCSS
+        extractCSS,
+        new CopyWebpackPlugin([
+            {
+                from: path.resolve(srcFolder, 'assets'),
+                to: path.join(outputFolder, 'assets')
+            }
+        ])
     ],
     module: {
         loaders: [
@@ -39,13 +46,15 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                use: extractCSS.extract({
-                    fallback: 'style-loader',
-                    use: [
-                        'css-loader',
-                        'sass-loader'
-                    ]
-                })
+                use: isProd ?
+                    extractCSS.extract({
+                        fallback: 'style-loader',
+                        use: [
+                            'css-loader',
+                            'sass-loader'
+                        ]
+                    }) :
+                    ['style-loader', 'css-loader', 'sass-loader']
             }
         ]
     }
