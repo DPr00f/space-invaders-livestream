@@ -1,5 +1,5 @@
 {
-  "name": "animation-react",
+  "name": "space-invaders-test",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +9,7 @@
     "lint": "eslint src/**/*.js",
     "build": "webpack --optimize-minimize"
   },
-  "author": "",
+  "author": "Joao Lopes & Salomao Rodrigues",
   "license": "ISC",
   "dependencies": {
     "react": "^15.6.1",
