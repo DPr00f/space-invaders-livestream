@@ -16,7 +16,7 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "webpack": "^3.4.1",
-    "webpack-dev-server": "^2.6.1"
+    "webpack-dev-server": "^3.11.0"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
