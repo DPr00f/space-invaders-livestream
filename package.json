@@ -12,9 +12,9 @@
   "author": "Joao Lopes & Salomao Rodrigues",
   "license": "ISC",
   "dependencies": {
-    "prop-types": "^15.5.10",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
+    "prop-types": "^15.6.2",
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0",
     "webpack": "^3.4.1",
     "webpack-dev-server": "^2.6.1"
   },
